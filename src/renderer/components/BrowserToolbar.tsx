@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { ArrowLeft, ArrowRight, CircleStop, PanelBottom, PanelBottomClose, Radio, RefreshCw, ShieldOff } from 'lucide-react'
 import type { BrowserState } from '@shared/types'
 import { APP_NAME } from '@shared/constants'
+import appIcon from '../assets/icon.png'
 
 interface BrowserToolbarProps {
   browser: BrowserState
@@ -19,9 +20,7 @@ export const BrowserToolbar = ({ browser, inspectorCollapsed, onToggleInspector 
   return (
     <header className="flex items-center gap-1.5 border-b border-line bg-surface px-3 py-1.5">
       <div className="flex items-center gap-2 pr-2">
-        <div className="flex h-6 w-6 items-center justify-center rounded-md bg-accent text-[10px] font-bold text-accent-fg">
-          AR
-        </div>
+        <img src={appIcon} alt={APP_NAME} width={24} height={24} className="h-6 w-6 rounded-md" />
         <span className="text-[13px] font-semibold tracking-wide text-fg">{APP_NAME}</span>
       </div>
       <button className="toolbar-btn" disabled={!browser.canGoBack} onClick={() => void window.apireplay.goBack()}>

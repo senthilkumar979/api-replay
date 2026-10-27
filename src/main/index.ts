@@ -7,13 +7,19 @@ import { registerIpcHandlers } from './ipc/ipc-handlers'
 let controller: AppController | undefined
 let ipcRegistered = false
 
+function appIconPath(): string {
+  return join(__dirname, '../../resources/icon.png')
+}
+
 function createWindow(appController: AppController): void {
+  const icon = appIconPath()
   const window = new BrowserWindow({
     width: 1440,
     height: 920,
     minWidth: 1100,
     minHeight: 720,
     title: 'ApiReplay',
+    icon,
     backgroundColor: '#090b10',
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
@@ -38,6 +44,7 @@ function createWindow(appController: AppController): void {
 
 app.whenReady().then(async () => {
   electronApp.setAppUserModelId('com.apireplay.desktop')
+  if (process.platform === 'darwin') app.dock?.setIcon(appIconPath())
   app.on('browser-window-created', (_event, window) => optimizer.watchWindowShortcuts(window))
   controller = await AppController.create()
   createWindow(controller)

@@ -1,5 +1,7 @@
 # ApiReplay
 
+<img src="resources/wordmark.png" alt="ApiReplay" width="360" />
+
 Local desktop app for recording API traffic from an embedded Chromium browser, saving selected APIs, and replaying mock responses. No cloud backend, browser extension, proxy, or custom certificates.
 
 Captures stay in memory until you click **Save this API**.
