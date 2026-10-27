@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ApiReplay playground</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <p class="eyebrow">Local demo store</p>
+      <h1>ApiReplay playground</h1>
+      <p>
+        Open this page in ApiReplay with recording on. The inspector defaults to
+        <strong>XHR</strong> — use the XHR actions first, then switch the type filter to
+        <strong>Fetch</strong>.
+      </p>
+    </header>
+    <main>
+      <section>
+        <h2>XHR</h2>
+        <div class="actions">
+          <button data-via="xhr" data-url="/api/products">Load products</button>
+          <button data-via="xhr" data-url="/api/products/1">Product 1</button>
+          <button data-via="xhr" data-url="/api/failure">503 failure</button>
+          <button data-via="xhr" data-url="/api/empty">Empty 204</button>
+          <button data-via="xhr" data-url="/api/delay">Delayed</button>
+          <button data-via="xhr" data-url="/api/products" data-method="POST">Create product</button>
+          <button data-via="xhr" data-url="/api/side-effect" data-method="POST">Side effect</button>
+        </div>
+      </section>
+      <section>
+        <h2>Fetch</h2>
+        <div class="actions">
+          <button data-via="fetch" data-url="/api/products">Load products</button>
+          <button data-via="fetch" data-url="/api/products/99">Missing product</button>
+          <button data-via="fetch" data-url="/api/search?q=gadget">Search gadget</button>
+          <button data-via="fetch" data-url="/api/search?b=2&amp;a=1">Query order B,A</button>
+          <button data-via="fetch" data-url="/api/search?a=1&amp;b=2">Query order A,B</button>
+          <button data-via="fetch" data-url="/api/products" data-method="POST">Create product</button>
+        </div>
+      </section>
+      <section>
+        <h2>Last response</h2>
+        <pre id="out">Click an action to call the local API.</pre>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

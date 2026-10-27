@@ -1,0 +1,17 @@
+node_modules
+out
+dist
+release
+coverage
+.DS_Store
+*.log
+.vite
+playwright-report
+test-results
+.idea
+.vscode
+*.sqlite
+*.db
+.env
+.env.*
+!/.env.example

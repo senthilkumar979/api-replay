@@ -1,0 +1,29 @@
+@reference './global.css';
+
+.toolbar-btn {
+  @apply flex h-7 w-7 items-center justify-center rounded-md border border-line bg-raised text-fg-muted hover:bg-overlay hover:text-fg disabled:opacity-35;
+}
+
+.toolbar-chip {
+  @apply flex h-7 items-center gap-1.5 rounded-md border border-line bg-raised px-2 text-[11px] font-medium text-fg-muted hover:bg-overlay hover:text-fg;
+}
+
+.filter-select {
+  @apply h-7 rounded-md border border-line bg-raised px-2 text-[11px] text-fg-muted;
+}
+
+.field-input {
+  @apply mt-1 h-8 w-full rounded-md border border-line bg-ink px-2 text-sm text-fg outline-none focus:border-accent;
+}
+
+.btn-primary {
+  @apply rounded-md bg-accent px-3 py-1.5 text-sm font-medium text-accent-fg hover:brightness-110;
+}
+
+.btn-ghost {
+  @apply rounded-md border border-line bg-raised px-3 py-1.5 text-sm text-fg-muted hover:bg-overlay hover:text-fg;
+}
+
+.btn-danger {
+  @apply rounded-md border border-status-5xx/40 px-3 py-1.5 text-sm text-status-5xx hover:bg-status-5xx/10;
+}
